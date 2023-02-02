@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+});
+
+// Route User Inertia
+Route::get("/test-inertia", function(){
+    return Inertia::render("Home");
 });
